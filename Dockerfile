@@ -1,7 +1,7 @@
 # Base image
 FROM python:3.10-slim
 
-# Set the working directory
+# Set working directory
 WORKDIR /app
 
 # Install dependencies
