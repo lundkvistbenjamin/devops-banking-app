@@ -5,7 +5,7 @@ on:
     branches:
       - main
     tags:
-      - 'V*'  # Only runs on tag pushes starting with "V"
+      - 'V*'  # Runs on any tag starting with "V"
   workflow_dispatch:
 
 jobs:
@@ -33,7 +33,7 @@ jobs:
   build_and_push_docker:
     needs: test
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/tags/V1.0'
+    if: github.ref == 'refs/tags/V2.0'
 
     steps:
       - name: Check out the code
@@ -51,6 +51,6 @@ jobs:
       - name: Build and Push Docker Image
         run: |
           docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/bankapp:latest .
-          docker tag ${{ secrets.DOCKERHUB_USERNAME }}/bankapp:latest ${{ secrets.DOCKERHUB_USERNAME }}/bankapp:V1.0
+          docker tag ${{ secrets.DOCKERHUB_USERNAME }}/bankapp:latest ${{ secrets.DOCKERHUB_USERNAME }}/bankapp:V2.0
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/bankapp:latest
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/bankapp:V1.0
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/bankapp:V2.0

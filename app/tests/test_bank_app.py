@@ -1,9 +1,17 @@
 import pytest
+from unittest.mock import patch
 from app.bank_app import BankApp
+
+# Sample data to be used for mocking
+mock_users_data = {
+    "user1": {"password": "pass1", "balance": 1000, "account_number": "111-111-111"},
+    "user2": {"password": "pass2", "balance": 2000, "account_number": "222-222-222"}
+}
 
 @pytest.fixture
 def bank_app():
-    return BankApp()
+    with patch('app.db.users', mock_users_data):  # Mocking the users import from db.py
+        return BankApp()
 
 def test_login_success(bank_app):
     result = bank_app.login("user1", "pass1")

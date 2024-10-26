@@ -11,5 +11,5 @@ RUN pip install -r requirements.txt
 # Copy the app code
 COPY . .
 
-# Command to run your app (replace with appropriate command for V1)
-CMD ["python", "app/bank_app.py"]
+# Command to run the app
+CMD ["python", "-m", "app.bank_app"]
