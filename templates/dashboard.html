@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Account Dashboard</h1>
+    <p>Account Number: {{ account_info.account_number }}</p>
+    <p>Balance: {{ account_info.balance }}</p>
+    <form method="POST" action="/logout">
+        <input type="submit" value="Logout">
+    </form>
+</body>
+</html>
