@@ -36,5 +36,5 @@ def logout():
     session.pop('user', None)  # Remove user from session
     return redirect(url_for('home'))
 
-if __name__ == "__main__":
-    app.run(debug=True)
+# Run the application directly
+app.run(host="0.0.0.0", port=5000, debug=True)
