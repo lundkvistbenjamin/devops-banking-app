@@ -7,6 +7,7 @@ on:
       - main
     tags:
       - 'V*'  # Runs on any tag starting with "V"
+  workflow_dispatch:
 
 jobs:
   # 1: Run Tests
