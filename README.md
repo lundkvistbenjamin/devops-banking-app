@@ -1,18 +1,16 @@
-# Simple Banking App
+# DevOps Banking App
+A simple banking app showcasing Docker and DevOps practices.
 
-Welcome to the Simple Banking App! This application is a basic Banking App where we tested/demonstrated our CI/CD pipeline.
+## Features
+- Banking functionalities
+- Docker containerization for deployment
+- Continuous Integration/Continuous Deployment (CI/CD) pipeline
 
-## Overview
+## Installation
+Clone the repository and build the Docker container.
 
-This project consists of three versions of the banking app, each progressively improving upon the last:
-
-- **Version 1**: Very basic version with hard-coded user credentials.
-- **Version 2**: Separate database file. 
-- **Version 3**: Same as Version 2 but as a Flask app. 
-
-## CI/CD Pipeline
-
-The pipeline includes:
-
-1. **Testing**: Automated tests on GitHub Actions using Pytest. 
-2. **Building and Pushing Docker Images**: The application is containerized and deployed to Docker Hub. 
+```bash
+git clone https://github.com/lundkvistbenjamin/devops-banking-app.git
+cd devops-banking-app
+docker build -t banking-app .
+docker run -p 5000:5000 banking-app
