@@ -14,3 +14,7 @@ git clone https://github.com/lundkvistbenjamin/devops-banking-app.git
 cd devops-banking-app
 docker build -t banking-app .
 docker run -p 5000:5000 banking-app
+```
+
+## **License**  
+MIT License  
